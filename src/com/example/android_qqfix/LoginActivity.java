@@ -1,5 +1,6 @@
 package com.example.android_qqfix;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -78,6 +80,7 @@ public class LoginActivity extends Activity{
 			
 		});
 		
+		list = new ArrayList<Map>();
 		LoginUserInfo user1 = new LoginUserInfo(R.drawable.contact_0, "1234567", R.drawable.deletebutton);
 		LoginUserInfo user2 = new LoginUserInfo(R.drawable.contact_1, "3456789", R.drawable.deletebutton);
 		addUser(user1);
@@ -109,6 +112,46 @@ public class LoginActivity extends Activity{
 			}
 			
 		});
+		
+		listIndicatorButton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(isIndicatorUp){
+					isIndicatorUp = false;
+					isVisible = false;
+					listIndicatorButton.setBackgroundResource(R.drawable.indicator_down);
+					loginList.setVisibility(View.GONE);
+				}else{
+					isIndicatorUp = true;
+					isVisible = true;
+					listIndicatorButton.setBackgroundResource(R.drawable.indicator_up);
+					loginList.setVisibility(View.VISIBLE);
+				}
+			}
+			
+		});
+	}
+	
+	public boolean onTouchEvent(MotionEvent event){
+		if(event.getAction() == MotionEvent.ACTION_DOWN){
+			int[] location = new int[2];
+			//调用getLocationInWindow方法获得某一控件在窗口中左上角的横纵坐标
+			loginList.getLocationInWindow(location);
+			//获得在屏幕上点击的点的坐标
+			int x = (int)event.getX();
+			int y = (int)event.getY();
+			if(x<location[0]|| x>location[0]+loginList.getWidth() ||
+                    y<location[1]||y>location[1]+loginList.getHeight()){
+				isIndicatorUp = false;
+				isVisible = false;
+				
+				listIndicatorButton.setBackgroundResource(R.drawable.indicator_down);
+				loginList.setVisibility(View.GONE);//让ListView列表消失，并且让游标向下指！
+			}
+		}
+		return super.onTouchEvent(event);
 	}
 	
 	private void addUser(LoginUserInfo user){
@@ -176,6 +219,7 @@ public class LoginActivity extends Activity{
             */
 			if(convertView == null){
 				convertView = LayoutInflater.from(context).inflate(itemLayout, null);
+				holder=new ViewHolder();
 				holder.userPhoto = (ImageView)convertView.findViewById(to[0]);
 				holder.userQQ = (TextView)convertView.findViewById(to[1]);
 				holder.deleteButton = (ImageButton)convertView.findViewById(to[2]);
@@ -202,11 +246,13 @@ public class LoginActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				list.remove(position);
+				
+				//如果删除的就是当前显示的账号，那么将主界面当前显示的头像设置回初始头像
 				if(position == currentSelectedPosition){
 					currentUserImage.setImageResource(R.drawable.qqmain);
 					qqEdit.setText("");
 					currentSelectedPosition = -1;
-				}else if(position < currentSelectedPosition){
+				}else if(position < currentSelectedPosition){ //这里小于当前选择的position时需要进行减1操作
 					currentSelectedPosition--;
 				}
 				listIndicatorButton.setBackgroundResource(R.drawable.indicator_down);

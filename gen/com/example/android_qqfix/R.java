@@ -8,6 +8,12 @@
 package com.example.android_qqfix;
 
 public final class R {
+    public static final class anim {
+        public static final int left_in=0x7f040000;
+        public static final int left_out=0x7f040001;
+        public static final int right_in=0x7f040002;
+        public static final int right_out=0x7f040003;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -17,8 +23,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int add_back=0x7f020000;
@@ -28,83 +34,137 @@ public final class R {
         public static final int chat_bottom_add=0x7f020004;
         public static final int chat_bottom_keyboard=0x7f020005;
         public static final int chat_bottom_look=0x7f020006;
-        public static final int chat_contact_back=0x7f020007;
-        public static final int chat_flock=0x7f020008;
-        public static final int contact_0=0x7f020009;
-        public static final int contact_1=0x7f02000a;
-        public static final int contact_2=0x7f02000b;
-        public static final int contact_3=0x7f02000c;
-        public static final int contact_4=0x7f02000d;
-        public static final int contact_back=0x7f02000e;
-        public static final int delete_button_edit=0x7f02000f;
-        public static final int deletebutton=0x7f020010;
-        public static final int f_static_000=0x7f020011;
-        public static final int f_static_001=0x7f020012;
-        public static final int f_static_002=0x7f020013;
-        public static final int f_static_003=0x7f020014;
-        public static final int f_static_004=0x7f020015;
-        public static final int f_static_005=0x7f020016;
-        public static final int f_static_006=0x7f020017;
-        public static final int f_static_009=0x7f020018;
-        public static final int f_static_010=0x7f020019;
-        public static final int f_static_011=0x7f02001a;
-        public static final int f_static_012=0x7f02001b;
-        public static final int f_static_013=0x7f02001c;
-        public static final int f_static_014=0x7f02001d;
-        public static final int f_static_015=0x7f02001e;
-        public static final int f_static_017=0x7f02001f;
-        public static final int f_static_018=0x7f020020;
-        public static final int f_static_019=0x7f020021;
-        public static final int f_static_020=0x7f020022;
-        public static final int face_history_disselected=0x7f020023;
-        public static final int face_history_selected=0x7f020024;
-        public static final int face_look_disselected=0x7f020025;
-        public static final int face_look_selected=0x7f020026;
-        public static final int fillet_shape=0x7f020027;
-        public static final int forum=0x7f020028;
-        public static final int ic_launcher=0x7f020029;
-        public static final int indicator_down=0x7f02002a;
-        public static final int indicator_up=0x7f02002b;
-        public static final int lastchild=0x7f02002c;
-        public static final int life_service=0x7f02002d;
-        public static final int list_item_border=0x7f02002e;
-        public static final int login_button_back=0x7f02002f;
-        public static final int msg_button_back=0x7f020030;
-        public static final int qian_point=0x7f020031;
-        public static final int qqlist_classify_indicator=0x7f020032;
-        public static final int qqmain=0x7f020033;
-        public static final int qqnum_edit=0x7f020034;
-        public static final int shen_point=0x7f020035;
-        public static final int todown=0x7f020036;
-        public static final int toright=0x7f020037;
+        public static final int chat_button_fillet_shape=0x7f020007;
+        public static final int chat_contact_back=0x7f020008;
+        public static final int chat_flock=0x7f020009;
+        public static final int chat_title_layer=0x7f02000a;
+        public static final int contact_0=0x7f02000b;
+        public static final int contact_1=0x7f02000c;
+        public static final int contact_2=0x7f02000d;
+        public static final int contact_3=0x7f02000e;
+        public static final int contact_4=0x7f02000f;
+        public static final int contact_back=0x7f020010;
+        public static final int delete_button_edit=0x7f020011;
+        public static final int deletebutton=0x7f020012;
+        public static final int edit_fillet_shape=0x7f020013;
+        public static final int f_static_000=0x7f020014;
+        public static final int f_static_001=0x7f020015;
+        public static final int f_static_002=0x7f020016;
+        public static final int f_static_003=0x7f020017;
+        public static final int f_static_004=0x7f020018;
+        public static final int f_static_005=0x7f020019;
+        public static final int f_static_006=0x7f02001a;
+        public static final int f_static_009=0x7f02001b;
+        public static final int f_static_010=0x7f02001c;
+        public static final int f_static_011=0x7f02001d;
+        public static final int f_static_012=0x7f02001e;
+        public static final int f_static_013=0x7f02001f;
+        public static final int f_static_014=0x7f020020;
+        public static final int f_static_015=0x7f020021;
+        public static final int f_static_017=0x7f020022;
+        public static final int f_static_018=0x7f020023;
+        public static final int f_static_019=0x7f020024;
+        public static final int f_static_020=0x7f020025;
+        public static final int face_history_disselected=0x7f020026;
+        public static final int face_history_selected=0x7f020027;
+        public static final int face_look_disselected=0x7f020028;
+        public static final int face_look_selected=0x7f020029;
+        public static final int fillet_shape=0x7f02002a;
+        public static final int forum=0x7f02002b;
+        public static final int ic_launcher=0x7f02002c;
+        public static final int indicator_down=0x7f02002d;
+        public static final int indicator_up=0x7f02002e;
+        public static final int lastchild=0x7f02002f;
+        public static final int life_service=0x7f020030;
+        public static final int list_item_border=0x7f020031;
+        public static final int list_lastitem_border=0x7f020032;
+        public static final int login_button_back=0x7f020033;
+        public static final int msg_button_back=0x7f020034;
+        public static final int qian_point=0x7f020035;
+        public static final int qqlist_classify_indicator=0x7f020036;
+        public static final int qqlist_classify_text=0x7f020037;
+        public static final int qqmain=0x7f020038;
+        public static final int qqnum_edit=0x7f020039;
+        public static final int shen_point=0x7f02003a;
+        public static final int todown=0x7f02003b;
+        public static final int toright=0x7f02003c;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000c;
-        public static final int delete_button_edit=0x7f080007;
-        public static final int fetchPassword=0x7f080009;
-        public static final int loginQQList=0x7f08000b;
-        public static final int login_deleteButton=0x7f080002;
-        public static final int login_userPhoto=0x7f080000;
-        public static final int login_userQQ=0x7f080001;
-        public static final int myImage=0x7f080003;
-        public static final int qqListIndicator=0x7f080006;
-        public static final int qqLoginButton=0x7f080008;
-        public static final int qqNum=0x7f080004;
-        public static final int qqPassword=0x7f080005;
-        public static final int registQQ=0x7f08000a;
+        public static final int action_settings=0x7f090032;
+        public static final int chat_bottom_add=0x7f090010;
+        public static final int chat_bottom_edittext=0x7f090011;
+        public static final int chat_bottom_linear=0x7f09000e;
+        public static final int chat_bottom_look=0x7f09000f;
+        public static final int chat_bottom_sendbutton=0x7f090012;
+        public static final int chat_contact_button=0x7f090008;
+        public static final int chat_contact_name=0x7f090007;
+        public static final int chat_list=0x7f09000d;
+        public static final int chat_msg_button=0x7f090006;
+        public static final int chat_title=0x7f090005;
+        public static final int chatlist_image_me=0x7f090001;
+        public static final int chatlist_image_other=0x7f090003;
+        public static final int chatlist_text_me=0x7f090002;
+        public static final int chatlist_text_other=0x7f090004;
+        public static final int childCount=0x7f090018;
+        public static final int ct_name=0x7f090014;
+        public static final int ct_photo=0x7f090013;
+        public static final int ct_sign=0x7f090015;
+        public static final int delete_button_edit=0x7f090029;
+        public static final int faceFlipper=0x7f09000a;
+        public static final int faceLayout=0x7f090009;
+        public static final int fetchPassword=0x7f09002b;
+        public static final int fill_the_gap=0x7f09000b;
+        public static final int gridImage=0x7f090000;
+        public static final int groupImage=0x7f090016;
+        public static final int groupName=0x7f090017;
+        public static final int loginQQList=0x7f09002d;
+        public static final int login_deleteButton=0x7f090024;
+        public static final int login_userPhoto=0x7f090022;
+        public static final int login_userQQ=0x7f090023;
+        public static final int myGridView=0x7f090021;
+        public static final int myImage=0x7f090025;
+        public static final int pagePoint=0x7f09000c;
+        public static final int pointImageView=0x7f09002e;
+        public static final int qqListIndicator=0x7f090028;
+        public static final int qqLoginButton=0x7f09002a;
+        public static final int qqNum=0x7f090026;
+        public static final int qqPassword=0x7f090027;
+        public static final int qq_list=0x7f09001b;
+        public static final int qqlist_classify=0x7f09001a;
+        public static final int qqlist_classify_down=0x7f09001c;
+        public static final int qqlist_classify_image=0x7f09002f;
+        public static final int qqlist_classify_leftindicator=0x7f090031;
+        public static final int qqlist_classify_name=0x7f090030;
+        public static final int qqlist_scroll=0x7f090019;
+        public static final int registQQ=0x7f09002c;
+        public static final int titleGroupView=0x7f09001d;
+        public static final int title_childCount=0x7f090020;
+        public static final int title_groupImage=0x7f09001e;
+        public static final int title_groupName=0x7f09001f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int login_listitem=0x7f030001;
-        public static final int login_main=0x7f030002;
+        public static final int chat_grid_item=0x7f030001;
+        public static final int chat_listitem_me=0x7f030002;
+        public static final int chat_listitem_other=0x7f030003;
+        public static final int chat_main=0x7f030004;
+        public static final int child_grid_item=0x7f030005;
+        public static final int layout_child=0x7f030006;
+        public static final int layout_group=0x7f030007;
+        public static final int layout_qqlist_expandable=0x7f030008;
+        public static final int layout_view_item=0x7f030009;
+        public static final int login_listitem=0x7f03000a;
+        public static final int login_main=0x7f03000b;
+        public static final int point_image_layout=0x7f03000c;
+        public static final int qqlist_classify_item=0x7f03000d;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int action_settings=0x7f060001;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060002;
     }
     public static final class style {
         /** 
@@ -128,10 +188,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }
